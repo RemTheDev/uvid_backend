@@ -7,7 +7,9 @@ const expApp = express();
 const httpServer = http.createServer(expApp);
 let rooms = {};
 
-//expApp.use(express.static(__dirname + '/../public/dist'));
+expApp.get("/", function(req, res) {
+    res.send("It works!");
+});
 
 const port = process.env.port || 3000;
 httpServer.listen(port);
