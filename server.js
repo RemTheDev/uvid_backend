@@ -9,7 +9,8 @@ let rooms = {};
 
 //expApp.use(express.static(__dirname + '/../public/dist'));
 
-httpServer.listen(3000);
+const port = process.env.port || 3000;
+httpServer.listen(port);
 console.log('Listening on port ', 3000);
 socketIO.listen(httpServer).on('connection', (socket) => {
     let currRoom;
@@ -44,7 +45,7 @@ socketIO.listen(httpServer).on('connection', (socket) => {
                 socket.emit('room_is_full', { roomId: currRoom });
             }
         }
-        
+
         console.log('User', data.userId, 'connected to room', currRoom);
     });
 
