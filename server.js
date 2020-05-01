@@ -11,7 +11,7 @@ expApp.get("/", function(req, res) {
     res.send("It works!");
 });
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 httpServer.listen(port, '0.0.0.0', () => {
     const address = httpServer.address();
     console.log('server listening at', address);
