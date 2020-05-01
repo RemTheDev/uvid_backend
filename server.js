@@ -13,7 +13,7 @@ expApp.get("/", function(req, res) {
 
 const port = process.env.port || 3000;
 httpServer.listen(port, '0.0.0.0', () => {
-    const address = server.address();
+    const address = httpServer.address();
     console.log('server listening at', address);
 });
 //console.log('Listening on port ', 3000);
